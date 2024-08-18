@@ -1,5 +1,7 @@
 package com.shyam.config;
 
+import java.time.format.DateTimeFormatter;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
@@ -19,4 +21,9 @@ public class AppConfig {
                     .build();
     }
 
+    @Bean
+    DateTimeFormatter getFormatter() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss");
+        return formatter;
+    }
 }
